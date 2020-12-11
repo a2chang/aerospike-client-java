@@ -431,6 +431,9 @@ public abstract class RWTask {
 		}
 		else {
 			counters.read.count.getAndIncrement();
+			if (record.bins == null) {
+				System.out.printf("null bins!  expiration:%d  generation:%d\n", record.expiration, record.generation);
+			}
 		}
 	}
 
