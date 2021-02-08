@@ -21,63 +21,63 @@ package com.aerospike.client;
  */
 public final class Operation {
 	/**
-	 * Create read bin database operation.
+	 * Create operation that reads a bin.
 	 */
 	public static Operation get(String binName) {
 		return new Operation(Type.READ, binName);
 	}
 
 	/**
-	 * Create read all record bins database operation.
+	 * Create operation that reads all bins of a record.
 	 */
 	public static Operation get() {
 		return new Operation(Type.READ);
 	}
 
 	/**
-	 * Create read record header database operation.
+	 * Create operation that reads record header.
 	 */
 	public static Operation getHeader() {
 		return new Operation(Type.READ_HEADER);
 	}
 
 	/**
-	 * Create set database operation.
+	 * Create operation that sets a bin.
 	 */
 	public static Operation put(Bin bin) {
 		return new Operation(Type.WRITE, bin.name, bin.value);
 	}
 
 	/**
-	 * Create string append database operation.
+	 * Create operation that appends a string.
 	 */
 	public static Operation append(Bin bin) {
 		return new Operation(Type.APPEND, bin.name, bin.value);
 	}
 
 	/**
-	 * Create string prepend database operation.
+	 * Create operation that prepends a string.
 	 */
 	public static Operation prepend(Bin bin) {
 		return new Operation(Type.PREPEND, bin.name, bin.value);
 	}
 
 	/**
-	 * Create integer/double add database operation.
+	 * Create operation that adds an integer/double.
 	 */
 	public static Operation add(Bin bin) {
 		return new Operation(Type.ADD, bin.name, bin.value);
 	}
 
 	/**
-	 * Create touch record database operation.
+	 * Create operation that touches a record.
 	 */
 	public static Operation touch() {
 		return new Operation(Type.TOUCH);
 	}
 
 	/**
-	 * Create delete record database operation.
+	 * Create operation that deletes a record.
 	 */
 	public static Operation delete() {
 		return new Operation(Type.DELETE);
